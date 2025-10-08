@@ -6,6 +6,10 @@ A beautiful and intuitive Python application for generating videos using OpenAI'
 ![Streamlit](https://img.shields.io/badge/streamlit-1.28+-red.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+## 🌐 Try it Online
+
+Don't want to run the project yourself? Check out the live demo at **[https://sora-videos.streamlit.app/](https://sora-videos.streamlit.app/)** 🚀
+
 ## ✨ Features
 
 - 🤖 **Multiple Sora Models** - Choose between Sora 2 Pro or Sora 2
@@ -117,6 +121,8 @@ Generate videos purely from text descriptions - no input needed. Perfect for cre
 1. **Upload a video** (MP4, MOV, AVI)
 2. **Write a prompt** describing how you want it transformed
 3. Sora will modify and enhance your video based on the prompt
+
+> ⚠️ **Note**: Video-to-video generation may not be available to most users yet due to OpenAI's current access restrictions on this feature.
 
 ### Important Notes:
 - ⚠️ **Real People**: Uploading images of real people is restricted. Only use images with explicit permission.
