@@ -8,6 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from PIL import Image
 import io
+from streamlit_autorefresh import st_autorefresh
 
 # Page configuration
 st.set_page_config(
@@ -799,6 +800,10 @@ def main():
     if 'last_known_status' not in st.session_state:
         st.session_state.last_known_status = None
     
+    # Auto-refresh every 3 seconds when generation is in progress
+    if st.session_state.generation_in_progress:
+        st_autorefresh(interval=3000, key="video_status_refresh")
+    
     # Sidebar for configuration
     with st.sidebar:
         st.markdown("### ⚙️ Settings")
@@ -1415,7 +1420,7 @@ def main():
                         with col_time:
                             status_text = st.empty()
                     
-                    # Check video status (will auto-refresh via JavaScript)
+                    # Check video status (auto-refreshes every 3 seconds)
                     start_time = st.session_state.generation_start_time or time.time()
                     elapsed = int(time.time() - start_time)
                     
